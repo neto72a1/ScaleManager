@@ -3,7 +3,7 @@ import { TextInput, Button, View, Text, Alert, TouchableOpacity } from 'react-na
 import { useRouter } from 'expo-router';
 import axios from 'axios';
 import { useAuth } from "./contexts/authContexts"; // Ajuste o caminho se necessário
-import { styles } from "./styles/loginScreenStyle";
+import { styles } from "../screens/styles/loginScreenStyle";
 import { registerRootComponent } from 'expo';
 import App from './app';
 

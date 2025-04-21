@@ -8,7 +8,9 @@
       ]
     },
     "moduleResolution": "node", 
-    "esModuleInterop": true 
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // Adicione esta linha
+    "forceConsistentCasingInFileNames": true 
   },
   "include": [
     "**/*.ts",
