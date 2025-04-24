@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Src",
-    "\\Src\\app"
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\(admin)",
+    "\\src\\app\\(admin)\\ministries",
+    "\\src\\app\\(admin)\\ministries\\[ministryId]"
   ],
-  "SelectedNode": "\\Src\\app\\index.tsx",
+  "SelectedNode": "\\src\\app\\(admin)\\ministries\\[ministryId]\\leaders.tsx",
   "PreviewInSolutionExplorer": false
 }

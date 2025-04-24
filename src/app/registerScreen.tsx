@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import CheckBox from "@react-native-community/checkbox";
+import CheckBox from "expo-checkbox";
 import { useRouter } from "expo-router";
 import axios from 'axios';
 
 import { styles } from "./styles/registerScreenStyle";
 
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "https://192.168.100.73:8081/api/";
 
 interface Ministry {
     id: string;
@@ -86,7 +86,7 @@ const RegisterScreen = () => {
 
             if (response.status === 201) {
                 Alert.alert("Sucesso", "Registro realizado com sucesso. Faça login.", [
-                    { text: "OK", onPress: () => router.push("/index") } // Removido ".tsx"
+                    { text: "OK", onPress: () => router.push("./index") } // Removido ".tsx"
                 ]);
             } else {
                 Alert.alert("Erro", response.data?.message || "Erro ao registrar.");
@@ -188,7 +188,7 @@ const RegisterScreen = () => {
             <TouchableOpacity style={styles.button} onPress={handleRegister} disabled={loading}>
                 <Text style={styles.buttonText}>{loading ? 'Cadastrando...' : 'Cadastrar'}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push("/index")}> 
+            <TouchableOpacity onPress={() => router.push("./index")}> 
                 <Text style={styles.loginText}>Já tem uma conta? Faça login</Text>
             </TouchableOpacity>
         </ScrollView>

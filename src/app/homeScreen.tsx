@@ -23,11 +23,11 @@ const HomeScreen = () => {
             <Text style={styles.title}>Bem Vindo(a){userName ? ` ${userName}` : ''} ao Escalas Ibira!</Text>
             <Button
                 title="Minha Disponibilidade"
-                onPress={() => router.navigate("/userAvailabilityScreen")}
+                onPress={() => router.navigate("./userAvailabilityScreen")}
             />
             <Button
                 title="Visualizar Escalas"
-                onPress={() => router.navigate("/scaleScreen")}
+                onPress={() => router.navigate("./scaleScreen")}
             />
             {/* Outros botões */}
         </View>

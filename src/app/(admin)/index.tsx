@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { useAuth } from "../contexts/authContexts"; // Importe o contexto de autenticação
+import { useAuth } from "../authContexts"; // Importe o contexto de autenticação
 
 const AdminDashboard = () => {
   const { user } = useAuth(); // Obtenha o usuário do contexto

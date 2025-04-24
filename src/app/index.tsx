@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { TextInput, Button, View, Text, Alert, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import axios from 'axios';
-import { useAuth } from "./contexts/authContexts"; // Ajuste o caminho se necessário
-import { styles } from "../screens/styles/loginScreenStyle";
+import { useAuth } from "./authContexts"; // Ajuste o caminho se necessário
+import { styles } from "./styles/loginScreenStyle";
 import { registerRootComponent } from 'expo';
 import App from './app';
 
 registerRootComponent(App);
 
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "http://192.168.100.73:8081/api";
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
@@ -41,7 +41,7 @@ const LoginScreen = () => {
             if (response.status === 200) {
                 const { token, roles } = response.data; // Pegue o token e as roles
                 await signIn(token); // Use a função signIn do contexto
-                router.push("/"); // Navega para a tela principal (rota '/')
+                router.push(".."); // Navega para a tela principal (rota '/')
             } else {
                 Alert.alert("Erro", response.data?.message || "Credenciais inválidas.");
             }
@@ -76,7 +76,7 @@ const LoginScreen = () => {
             <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={loading}>
                 <Text style={styles.buttonText}>{loading ? 'Entrando...' : 'Entrar'}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push("/registerScreen")}>
+            <TouchableOpacity onPress={() => router.push("./screens/registerScreen")}>
                 <Text style={styles.registerText}>Não tem uma conta? Cadastre-se</Text>
             </TouchableOpacity>
         </View>

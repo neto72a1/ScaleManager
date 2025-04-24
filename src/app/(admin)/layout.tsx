@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from "../contexts/authContexts";
+import { useAuth } from "../authContexts";
 import { Redirect } from 'expo-router';
 import { View, Text } from 'react-native';
 
@@ -17,7 +17,7 @@ const AdminLayout = () => {
 
     // Redirecionar se não estiver autenticado ou não for um Admin
     if (!user || !user.roles.includes('Admin')) {
-        Redirect({href: "/index"}); // Redirecione para a página de login
+        Redirect({href: "./index"}); // Redirecione para a página de login
         return null; // Renderiza nulo para evitar o erro "Cannot update a component from inside the function body of a different component"
     }
 

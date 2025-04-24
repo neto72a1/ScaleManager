@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Link } from 'expo-router';
-import { AuthProvider } from "./contexts/authContexts"; // Importe o AuthProvider
+import { AuthProvider } from "./authContexts"; // Importe o AuthProvider
 
 const Page = () => {
   return (
@@ -10,23 +10,23 @@ const Page = () => {
 
       <View style={styles.separator} />
 
-      <Link href="/index" style={styles.link}>
+      <Link href="./index" style={styles.link}>
         <Text style={styles.linkText}>Ir para Login</Text>
       </Link>
 
-      <Link href="/registerScreen" style={styles.link}>
+      <Link href="./registerScreen" style={styles.link}>
         <Text style={styles.linkText}>Ir para Registro</Text>
       </Link>
 
-      <Link href="/leaderAvailabilityScreen" style={styles.link}>
+      <Link href="./leaderAvailabilityScreen" style={styles.link}>
         <Text style={styles.linkText}>Disponibilidade (Líder)</Text>
       </Link>
 
-      <Link href="/userAvailabilityScreen" style={styles.link}>
+      <Link href="./userAvailabilityScreen" style={styles.link}>
         <Text style={styles.linkText}>Minha Disponibilidade</Text>
       </Link>
 
-      <Link href="/scaleScreen" style={styles.link}>
+      <Link href="./scaleScreen" style={styles.link}>
         <Text style={styles.linkText}>Escalas</Text>
       </Link>
     </View>

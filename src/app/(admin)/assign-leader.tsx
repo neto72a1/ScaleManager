@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Picker, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { useRouter, Link } from 'expo-router';
+import { Picker } from '@react-native-picker/picker';
 
 interface User {
   id: string;

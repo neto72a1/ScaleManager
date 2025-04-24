@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, Button } from 'react-native';
-import { Link, useGlobalSearchParams, useRouter } from 'expo-router'; // Importe useRouter também
+import { Link, useGlobalSearchParams } from 'expo-router';
 import { ActivityIndicator } from 'react-native';
-import { UrlObject } from 'expo-router';
 
 interface Leader {
   id: string;
@@ -15,7 +14,6 @@ const MinistryLeadersList = () => {
   const [leaders, setLeaders] = useState<Leader[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter(); // Inicialize o useRouter
 
   useEffect(() => {
     if (ministryId) {
@@ -56,22 +54,13 @@ const MinistryLeadersList = () => {
         renderItem={({ item }) => (
           <View style={styles.listItem}>
             <Text>{item.userName} ({item.email})</Text>
-            <Link
-              href={{
-                pathname: '/admin/ministries/leaders/remove',
-                query: {
-                  ministryId: ministryId,
-                  leaderId: item.id,
-                },
-              } as UrlObject} // Adicione a tipagem aqui
-              asChild
-            >
+            <Link href={`./admin/ministries/leaders/remove?ministryId=${ministryId}&leaderId=${item.id}`} asChild>
               <Button title="Remover" />
             </Link>
           </View>
         )}
       />
-      <Link href="../" style={styles.link}>
+      <Link href="./admin/ministries" style={styles.link}>
         <Text>Voltar para Lista de Ministérios</Text>
       </Link>
     </View>
@@ -111,5 +100,9 @@ const styles = StyleSheet.create({
 });
 
 export default MinistryLeadersList;
+
+
+
+
 
 
