@@ -7,7 +7,7 @@ import { Picker } from '@react-native-picker/picker'; // Importe o Picker para s
 
 import { styles } from './styles/leaderAvailabilityScreenStyle';
 
-const API_BASE_URL = "http://192.168.100.73:8081/api";
+const API_BASE_URL = "http://localhost:8081/api";
 
 interface MarkedDates {
     [key: string]: {

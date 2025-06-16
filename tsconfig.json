@@ -7,7 +7,7 @@
         "./*"
       ]
     },
-    "moduleResolution": "node", 
+    "moduleResolution": "bundler", 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true, // Adicione esta linha
     "forceConsistentCasingInFileNames": true 
